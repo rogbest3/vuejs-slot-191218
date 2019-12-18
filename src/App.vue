@@ -27,4 +27,13 @@ export default{
 p{
   text-align: center;
 }
+ul.menu {
+    position:relative;
+    padding: 5px 5px 5px 5px;
+    list-style: none;
+    font-style: italic;
+}
+ul.menu a {
+    text-decoration:none;
+}
 </style>
