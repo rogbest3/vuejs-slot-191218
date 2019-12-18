@@ -1,28 +1,30 @@
-<template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<!-- Vue 2.6 버전 -->
+<template>  
+<div id="app">
+  <child-from :headerText="header" :footerText="footer">
+    <p>{{message}}</p>
+  </child-from>
+</div>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
+import ChildFrom from "@/components/Child.vue"
+export default{
+  name : "app",
+  components : {
+    ChildFrom
+  },
+  data(){
+    return {
+      header : "슬롯 헤드 테스트",
+      footer : "슬롯 푸터 테스트",
+      message : "APP 컨텐츠"
+    }
   }
+
 }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+<style scoped>
+p{
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
